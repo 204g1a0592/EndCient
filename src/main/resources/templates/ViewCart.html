@@ -68,14 +68,15 @@
         </thead>
         <tbody>
 			<tr th:each="item : ${cartItems}">
+				
 			     <td th:text="${item.product.productname}">Name</td>
 			     <td th:text="${item.product.price}">Price</td>
-			     <td th:text="${item.quantity}">Qty</td>
+			     <td th:text="${item.product.quantity}">Qty</td>
 			     <td th:text="${item.product.price * item.quantity}">Total</td>
-			   </tr>
+			  >
 
                
-                <td th:text="${item.quantity}">0</td>
+                <td th:text="${item.product.quantity}">0</td>
                 <td th:text="${item.product.price * item.quantity}">0</td>
                 <td>
                     <form th:action="@{/client/cart/remove}" method="post">

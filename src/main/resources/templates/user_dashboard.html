@@ -181,7 +181,7 @@
                     <p class="price">₹ <span th:text="${product.price}">0</span></p>
                     <p class="stock">Available: <span th:text="${product.quantity}">0</span></p>
 
-                    <form th:action=""@{/client/add/{productId}(productId=${product.id})}" method="post" th:if="${product.quantity > 0}">
+					<form th:action="@{/client/add/{productId}(productId=${product.productid})}" method="post" th:if="${product.quantity > 0}">
                         <input type="hidden" name="productId" th:value="${product.productid}" />
                         <div class="mb-2">
 							<label>

@@ -40,7 +40,10 @@ import org.springframework.http.HttpHeaders;
 @RequestMapping("/client")
 public class UserController {
 	
-	
+	@GetMapping("ViewCart")
+	public String cart() {
+		return "ViewCart";
+	}
 	@GetMapping("/products")
 	public String getAllProducts(Model model, @ModelAttribute Login user) {
 	    RestTemplate restTemplate = new RestTemplate();
@@ -273,7 +276,7 @@ RestTemplate restTemplate=new RestTemplate();
 
 	     model.addAttribute("cartItems", cartItems);
 	     model.addAttribute("username", session.getAttribute("username"));
-
+	   //  System.out.println("fomr view cart"+);
 	     return "ViewCart";  // your Thymeleaf template name for cart
 	 }
 
